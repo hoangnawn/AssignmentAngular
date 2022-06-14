@@ -1,0 +1,25 @@
+<app-header></app-header>
+<section class="">
+    <div class="max-w-4xl mx-auto py-5">
+        <div class="">
+            <h2 class="text-3xl font-bold">{{works.title}}</h2>
+            <div class="py-5 space-x-4 items-center ">
+                <span class="bg-[#FF7C7C] text-white rounded-full px-2 py-1">{{works.date | date:'y'}}</span> 
+                <span class="inline-block text-lg">Dashboard, User Experience Design</span>
+            </div>
+            <p>{{works.desc}}</p>
+        </div>
+        <div class="">
+            <img class="w-full mx-auto py-5" src="{{works.img}}" alt="">
+        </div>
+        <div>
+            <!-- <h1 class="text-3xl">Heading 1</h1>
+            <h2 class="text-2xl py-5">Heading 2</h2> -->
+            <p [innerHTML]="works.content"></p>
+            <!-- <img class="w-full mx-auto py-5" src="https://picsum.photos/680/460" alt="">
+            <img class="w-full mx-auto" src="https://picsum.photos/680/460" alt=""> -->
+
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

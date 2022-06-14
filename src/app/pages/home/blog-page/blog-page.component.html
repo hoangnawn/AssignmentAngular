@@ -1,0 +1,18 @@
+<app-header></app-header>
+<section class="blog">
+    <div class="max-w-4xl mx-auto py-10 px-5">
+        <div class="title py-14">
+            <h2 class="text-4xl font-bold">Blog</h2>
+        </div>
+        <div class="blog-content border-b py-5" *ngFor="let blog of blogs">
+            <a class="text-3xl font-bold" routerLink="/blog/{{blog.id}}">{{blog.title}}</a>
+            <div class="py-5 space-x-4">
+                <span class="font-bold text-[#21243D]">{{blog.date | date: 'MMM d, y'}}</span> <span>|</span> <span class="text-light-100">Express, Handlebars</span>
+            </div>
+            {{blog.desc}}
+            
+        </div>
+    
+    </div>
+</section>
+<app-footer></app-footer>

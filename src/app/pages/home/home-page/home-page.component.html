@@ -1,0 +1,94 @@
+<app-header></app-header>
+<section class="banner">
+    <div class="max-w-4xl mx-auto">
+        <div class="grid md:grid-cols-3">
+            <div class="profile md:col-span-2 order-2 md:order-1">
+                <h2 class="text-5xl font-bold mb-10 leading-[60px]">Hi, I'm Nam,<br> Creative Technologist</h2>
+                <p class="max-w-lg mb-10">I design and code beautifully simple things, and I love what I do.
+                </p>
+                <button class="p-4 bg-[#FF6464] text-white text-lg rounded-md mb-10">Download Resume</button>
+            </div>
+            <div class="md:col-span-1 order-1 md:order-2">
+                <img class="rounded-full md:ml-auto mx-auto "
+                    src="https://mattfarley.ca/img/mf-avatar.svg" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- recent post -->
+<section class="recent-post">
+    <div class="bg-blue-50 p-7">
+        <div class="max-w-4xl mx-auto flex justify-between">
+            <h1 class="text-lg pb-4">Recent Post</h1>
+            <a class="text-base pb-4 text-cyan-500" routerLink="blog">View all</a>
+        </div>
+        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-4" >
+            <div class="bg-white rounded-md p-5 boder-b" *ngFor="let blog of blogs | slice:0:2">
+                <a class="font-bold text-2xl mb-10" routerLink="/blog/{{blog.id}}">{{blog.title}}</a> <br>
+                <div class="flex gap-10 my-6">
+                    <span class="">{{blog.date | date: 'MMM d, y'}}</span> | <span>Design, Pattern</span>
+                </div>
+                <p class="text-left text-sm">{{blog.desc}}</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Featured work -->
+<section class="featured work">
+    <div class="max-w-4xl mx-auto p-7">
+        <div class="title mb-4">
+            <h1 class="text-xl text-center md:text-left">Featured Works</h1>
+        </div>
+        <div class="">
+            <div class="project-work grid md:grid-cols-[246px,auto] py-5 border-b" *ngFor="let work of works | slice:0:3">
+                <div class="mr-5">
+                    <img class="rounded-md mx-auto w-full"
+                        src="{{work.img}}"  alt="">
+                </div>
+                <div class="">
+                    <a class="text-2xl text-[#21243D] font-bold " routerLink="/work/{{work.id}}">{{work.title}}</a>
+                    <div class="flex space-x-4 py-5 items-center">
+                        <span class="inline-block rounded-full bg-[#142850] px-2 py-1 text-white font-bold">{{work.date | date:'y'}}</span>
+                        <span class="inline-block text-lg text-[#8695A4]">Dashboard</span>
+                    </div>
+                    <p class="">{{work.desc}}</p>
+                </div>
+            </div>
+            <!-- <div class="project-work grid md:grid-cols-[246px,auto] py-5 border-b">
+                <div class="mr-5">
+                    <img class="rounded-md w-full"
+                        src="https://picsum.photos/246/180" alt="">
+                </div>
+                <div class="">
+                    <h1 class="text-3xl text-[#21243D] font-bold ">Designing Dashboards</h1>
+                    <div class="flex space-x-4 py-5 items-center">
+                        <span class="inline-block rounded-full bg-[#142850] px-2 py-1 text-white font-bold">2020</span>
+                        <span class="inline-block text-lg text-[#8695A4]">Dashboard</span>
+                    </div>
+                    <p class="">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
+                        Velit
+                        officia consequat
+                        duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                </div>
+            </div>
+            <div class="project-work grid md:grid-cols-[246px,auto] py-5 border-b">
+                <div class="mr-5">
+                    <img class="rounded-md w-full"
+                        src="https://picsum.photos/246/180" alt="">
+                </div>
+                <div class="">
+                    <h1 class="text-3xl text-[#21243D] font-bold ">Designing Dashboards</h1>
+                    <div class="flex space-x-4 py-5 items-center">
+                        <span class="inline-block rounded-full bg-[#142850] px-2 py-1 text-white font-bold">2020</span>
+                        <span class="inline-block text-lg text-[#8695A4]">Dashboard</span>
+                    </div>
+                    <p class="">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
+                        Velit
+                        officia consequat
+                        duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

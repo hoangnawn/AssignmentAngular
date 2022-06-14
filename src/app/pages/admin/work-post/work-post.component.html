@@ -1,0 +1,25 @@
+<nz-table #basicTable >
+    <thead>
+      <tr>
+        <th>Stt</th>
+        <th>Image</th>
+        <th>TItle</th>
+        <th>Description</th>
+        <th>
+            <a class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"  routerLink="add">Add</a>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let work of works; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td><img style="width: 150px;" src="{{ work.img }}" alt=""></td>
+        <td>{{ work.title }}</td>
+        <td>{{ work.desc }}</td>
+        <td>
+          <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"  routerLink="edit/{{work.id}}">Edit</a>
+          <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" (click)="remove(work.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>

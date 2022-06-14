@@ -1,0 +1,5 @@
+<form (ngSubmit)="onSubmit()" #formAdd="ngForm">
+    Email: <input type="text" [(ngModel)]="user.email" name="email"><br>
+    Password: <input type="password" [(ngModel)]="user.password" name="password"><br>
+    <button>Đăng ký</button>
+</form>

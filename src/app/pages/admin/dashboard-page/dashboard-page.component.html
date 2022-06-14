@@ -1,0 +1,30 @@
+<nz-layout>
+    <nz-sider nzCollapsible nzWidth="200px">
+        <div class="logo"></div>
+        <ul nz-menu nzTheme="dark" style="height: 150px;" nzMode="inline">
+            <li nz-menu-item>
+                <i nz-icon nzType="pie-chart"></i>
+                <a routerLink="blog">Blog</a>
+            </li>
+            <li nz-menu-item>
+                <i nz-icon nzType="desktop"></i>
+                <a routerLink="work">Work</a>
+            </li>
+            <li nz-menu-item>
+                <i nz-icon nzType="desktop"></i>
+                <a routerLink="contact">Contact</a>
+            </li>
+        </ul>
+    </nz-sider>
+    <nz-layout>
+        <nz-header></nz-header>
+        <nz-content>
+            <nz-breadcrumb>
+                <nz-breadcrumb-item>User</nz-breadcrumb-item>
+                <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
+            </nz-breadcrumb>
+            <router-outlet></router-outlet>
+        </nz-content>
+        <nz-footer>Ant Design ©2020 Implement By Angular</nz-footer>
+    </nz-layout>
+</nz-layout>

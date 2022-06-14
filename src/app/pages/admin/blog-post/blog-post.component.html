@@ -1,0 +1,23 @@
+<nz-table #basicTable >
+    <thead>
+      <tr>
+        <th>Stt</th>
+        <th>TItle</th>
+        <th>Description</th>
+        <th>
+            <a class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"  routerLink="add">Add</a>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let blog of blogs; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ blog.title }}</td>
+        <td>{{ blog.desc }}</td>
+        <td>
+          <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"  routerLink="edit/{{blog.id}}">Edit</a>
+          <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" (click)="remove(blog.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
